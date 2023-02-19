@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rendezvous Coffee</title>
+    <link rel="stylesheet" href="style0.css">
+    <link rel = "icon" href = "images/R.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css">
+  </head>
+  <body>
+
+<!--header begins-->
+
+    <header>
+      <a href="index.html" class="logo">
+        <img src="images/logo1.png" alt="">
+      </a>
+      <div class="menu-btn"></div>
+      <div class="navigation">
+        <div class="navigation-items">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="products.html">Menu</a>
+          <a href="gallery.html">Gallery</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </div>
+    </header>
+
+<!--header ends-->
+
+<!--section begins-->
+
+<!--bg-videos-->
+    <section class="home">
+      <video class="video-slide active" src="images/1.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="images/2.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="images/3.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="images/4.mp4" autoplay muted loop></video>
+      <video class="video-slide" src="images/5.mp4" autoplay muted loop></video>
+
+<!--home/page1-->
+
+      <div class="content active">
+        <h1>REST.<br>RELAX.<br>RELIVE.</h1>
+        <p>Coffee is all about choice. A cup of coffee can complete your day. What’s life without coffee? Wake up your taste buds.<br>
+          The best of all stimulants. Make your day smarter with coffee! Coffee, The way it was meant to be only at Rendezvous Coffee ™.</p>
+      </div>
+
+<!--page2 - About us-->
+
+      <div class="content">
+        <h1>ENJOY<br>THE GRIND.</h1>
+        <p>Made using 100% Arabica beans.
+          Infused with natural flavourings.
+          Smooth and robust without any bitterness.
+          Subtle aromatic & delicious notes.
+          Gluten free & vegan friendly.
+          No added sugar & no preservatives.
+          Each serving has <5 calories.
+          90-120 mg caffeine per serving.</p>
+        <a href="about.html">Visit About Us</a>
+      </div>
+
+<!--page3 - Menu-->
+
+      <div class="content">
+        <h1>The Menu.<br>Irresistible, Right?</h1>
+        <p>Delicious, handcrafted beverages and great-tasting food. The secret to making life better.<br>
+          It’s true. The perfect cup of coffee and a wholesome, delicious snack can make your day. So we make 
+          sure everything you choose is of the finest quality. Because really, isn’t that how life should be?</p>
+        <a href="products.html">Explore the Menu</a>
+      </div>
+
+<!--page4 - Gallery-->
+
+      <div class="content">
+        <h1>Ooohhh Caffeine.<br></h1>
+        <p>Our iconic Signature Blends are slow roasted for the perfect balance of rich flavour and mooth taste. 
+          We guarantee you the freshest taste and finest ingredients, every time. Check out our mesmerizing Gallery.</p>
+        <a href="gallery.html">Visit our Gallery</a>
+      </div>
+
+<!--page5 - Contact Us-->
+
+      <div class="content">
+        <h1>Contact Us.</h1>
+        <p>You're not going to hit a ridiculously long phone menu when you call us. Your email
+          isn't going to the inbox abyss, never to be seen or heard from again. At Rendezvous Coffee ™, 
+          we provide the exceptional service we'd want to experience ourselves!</p>
+        <a href="contact.html">Contact Us</a>
+      </div>
+
+<!--media icons-->
+
+      <div class="media-icons">
+        <a href="https://www.facebook.com/"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+      </div>
+      <div class="slider-navigation">
+        <div class="nav-btn active"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+        <div class="nav-btn"></div>
+      </div>
+
+      <p class="CopyrightText">Copyright © 2022 Abhiraj Chaudhuri. All Rights Reserved.</p>
+      
+    </section>
+
+<!--section ends-->
+
+<!--JavaScript begins-->
+
+    <script type="text/javascript">
+
+    const menuBtn = document.querySelector(".menu-btn");
+    const navigation = document.querySelector(".navigation");
+
+    menuBtn.addEventListener("click", () => {
+      menuBtn.classList.toggle("active");
+      navigation.classList.toggle("active");
+    });
+
+    const btns = document.querySelectorAll(".nav-btn");
+    const slides = document.querySelectorAll(".video-slide");
+    const contents = document.querySelectorAll(".content");
+
+    var sliderNav = function(manual){
+      btns.forEach((btn) => {
+        btn.classList.remove("active");
+      });
+
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+
+      contents.forEach((content) => {
+        content.classList.remove("active");
+      });
+
+      btns[manual].classList.add("active");
+      slides[manual].classList.add("active");
+      contents[manual].classList.add("active");
+    }
+
+    btns.forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        sliderNav(i);
+      });
+    });
+    </script>
+
+<!--JavaScript ends-->
+
+  </body>
+</html>
